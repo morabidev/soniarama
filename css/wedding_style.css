@@ -1337,7 +1337,6 @@ label.error{
 }
 .container {
 	position: relative;
-	z-index: 2;
 }
 
 /*03.2 Main Sidebar*/
