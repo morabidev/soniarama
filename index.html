@@ -26,8 +26,7 @@
     <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
-   <link href="plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css" />
-   <link href="plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 </head>
 <body class="wed_fixed_bcg wed_gold_folia _inner">
@@ -43,7 +42,7 @@
   <div class="wed_iframe">
     <!-- over -->
     <div class="wed_over wed_music_over" data-color="#000" data-opacity="0.5"></div>
-    <!-- <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/102137206&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe> -->
+    <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/102137206&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
   </div>
 
 
@@ -770,15 +769,11 @@
       <!-- White border end -->
     </section>
     <!-- content end -->
-    <div id="morabiah_guest" class="modal">
-      <div class="modal-content invitation-letter center-align posrel">
-        <div class="invitation-body">
-          <h4 class="nameofguest_morabi invitation-person"></h4>
-          <p class="invitation-mess" id="cordially">You are cordially invited to attend our wedding</p>
-        </div>
-      </div>
-    </div> 
   </div>
+  <div id="morabiah_guest" class="modal">
+        <h4 class="nameofguest_morabi invitation-person"></h4>
+        <p class="invitation-mess" id="cordially">You are cordially invited to attend our wedding</p>
+  </div> 
   <!-- Page End -->   
 
     <!-- Link to open the modal -->
@@ -798,8 +793,9 @@
 <!-- Theme JS -->
 <script src="js/wedding_script.js"></script>
 <!-- jQuery Modal -->
-<script src="plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
-<script src="plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 <script>
   function getQueryVariable(variable)
   {
@@ -817,11 +813,14 @@
           $.ajax({
               type: "POST",
               url: 'http://clientzone.morabi.id/nog/checkwave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
-              success: function(data) {
-                  $('.modal').modal(); 
-                  $('#morabiah_guest').modal('open'); 
-                  $('.nameofguest_morabi').html(data[0].guest_name);
-                  console.log(data[0].guest_name);
+              success: function(result) {
+                  // $('.modal').modal(); 
+                  $(".modal").modal({
+                    fadeDuration: 1000,
+                    fadeDelay: 0.50
+                  });
+                  $('.nameofguest_morabi').html(result.data.guest_name);
+                  // console.log(result.data.guest_name);
               }
   
           });
