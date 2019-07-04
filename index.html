@@ -17,7 +17,48 @@
 
     <!-- Icons CSS -->
     <link href="fonts/themify-icons.css" rel="stylesheet">
-
+    <style>
+    @media only screen and (min-width:769px){ /*desktop*/
+      .modal{
+        background:url('images/popup-desktop.jpg') no-repeat center!important;
+        background-size:100%!important;
+        height:40%!important;
+        width:90%!important;
+      }
+      .soniarama-einvite{
+        font-family:hensa!important;
+        text-align: center;
+        padding:10%;
+      }
+      .soniarama-einvite .invitation-person{
+        font-size:48px;
+        color:#4f6887!important;
+      }
+      .soniarama-einvite .invitation-mess{
+        font-size:26px;
+      }
+    }
+    @media only screen and (max-width:768px){ /*mobile*/
+      .modal{
+        background:url('images/popup-mobile.jpg') no-repeat center!important;
+        background-size:100%!important;
+        height:50%!important;
+        width:75%!important;
+      }
+      .soniarama-einvite{
+        font-family:hensa!important;
+        text-align: center;
+        padding:25% 5%;
+      }
+      .soniarama-einvite .invitation-person{
+        font-size:28px;
+        color:#4f6887!important;
+      }
+      .soniarama-einvite .invitation-mess{
+        font-size:20px;
+      }
+    }
+    </style>
     <!-- Theme CSS -->
     <link href="css/wedding_style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -770,8 +811,10 @@
     <!-- content end -->
   </div>
   <div id="morabiah_guest" class="modal">
+      <div class=" soniarama-einvite">
         <h4 class="nameofguest_morabi invitation-person"></h4>
-        <p class="invitation-mess" id="cordially">You are cordially invited to attend our wedding</p>
+        <p class="invitation-mess">You are cordially invited to attend our wedding</p>
+      </div>
   </div> 
   <!-- Page End -->   
 
@@ -785,7 +828,7 @@
 <!-- Library JS -->
 <script src="js/wedding_library.js"></script>
 <script src="js/jquery.countdown.min.js"></script>
-<!-- <script src="js/leaves.js"></script> -->
+<script src="js/leaves.js"></script>
 
 
 
