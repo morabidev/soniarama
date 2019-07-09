@@ -137,6 +137,7 @@ html {
 .wed_image_bck {
 	-webkit-background-size: cover;
 	background-size: cover;
+    background-repeat: no-repeat;
 }
 .wed_bg_right {
 	background-position:right!important;
@@ -677,7 +678,7 @@ textarea.form-control {
   border: 0;
   position: relative;
 	border-radius:0;
-  background: rgba(179,129,247,1);
+  background: rgb(62, 54, 187);
   color: #fff;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -730,7 +731,7 @@ textarea.form-control {
 	-webkit-transition: all 1.5s;
 	-o-transition: all 1.5s;
 	transition: all 1.5s;
-	background: rgba(179,129,247,1);
+	background: rgb(7, 172, 196);
 	padding: 15px;
 	color: #fff;
 	z-index: 2;
@@ -741,11 +742,11 @@ textarea.form-control {
  		transition: all .5s;
 	}
 .wed_wht_txt .btn {
-	background: rgba(179,129,247,1);
+	background: rgb(84, 189, 198);
 	color: #fff;
 }
 	.wed_wht_txt .btn:hover {
-	 background: rgba(100, 3, 232,1);
+	 background: rgba(7, 136, 195,1);
 	 transition: all .5s;
 	}
 	.wed_btn_margbot {
@@ -2714,6 +2715,14 @@ h2.wed_without_after {
   object-fit: cover;
   object-position: -31px -5px;
 }
+
+ img.wed_img_height2 {
+	min-height: 100%;
+	min-width: 100%;
+  object-fit: cover;
+  object-position: -31px;
+}
+
 .wed_portfolio_item.wed_story_img {
 	height: 100%;
 	width: 100%;
@@ -4485,7 +4494,7 @@ footer a {
 	background: rgba(255, 255, 255,0.9);
 }
 .wed_map_over {
-	background: rgba(151, 124, 245,0.7);
+	background: rgba(139, 226, 228,0.7);
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -4599,7 +4608,7 @@ footer a {
 		-o-transition: all 0.3s;
 		transition: all 0.3s;
 		position: absolute;
-		background: rgba(172, 237, 238, 0.9);
+
 		width: 100%;
 		height: 100%;
 		content: '';
@@ -4607,6 +4616,7 @@ footer a {
 		top: 0;
 		opacity: 0;
 	}
+
 	.wed_floral .wed_portfolio_item_cont:after {
 		background: rgba(198, 229, 232, 0.9);
 	}
@@ -4738,7 +4748,7 @@ footer a {
 	transition: all .6s;
 }
 .filter-button-group a:hover {
-	color: #9283e7;
+	color: #1684b7;
 }
 .wed_vid_bg .filter-button-group a:hover {
 	color: #c09e60;
