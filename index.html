@@ -691,42 +691,14 @@
         <div class="container text-center wed_great_titles">
           <div class="row">
             <div class="col-md-8 col-md-pull-2 col-md-push-2 col-sm-12">
-            <h2 class="wed_form_txt">Are you attending?</h2>
-            <p class="wed_form_txt">We can’t wait to see all of our beloved friends and relatives at the wedding. If, by chance, you are prevented from coming, please let us know in advance. </p>
-            
-              <form id="wed_form" class="wed_form">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form_color wed_image_bck" data-border="#07acc4">
-                      <input type="text" class="form-control" placeholder="Name" name="name" required>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form_color wed_image_bck" data-border="#07acc4">
-                      <input type="text" class="form-control" placeholder="E-mail" name="email" required>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form_color wed_image_bck" data-border="#07acc4">
-                      <select class="form-control" name="guests" required>
-                        <option value="">#Guests</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form_color wed_image_bck" data-border="#07acc4">
-                      <textarea class="form-control" placeholder="Message" name="message"></textarea>
-                    </div>
-                    <input type="submit" class="btn btn_new wed_btn_margbot" value="Send">
-                  </div>
-
-                </div>
-              </form>
+              <h2 class="wed_form_txt">Are you attending?</h2>
+              <p class="wed_form_txt">We can’t wait to see all of our beloved friends and relatives at the wedding. If, by chance, you are prevented from coming, please let us know in advance. </p>
+              <div class="responseAttend"></div>
+              <div class="wed_simple_block text-center">
+                <a  onclick="responseAttend('y')" class="btn btn-info">Yes I'm in</a>
+                <a  onclick="responseAttend('m')" class="btn btn-info">Maybe</a>
+                <a  onclick="responseAttend('n')" class="btn btn-info">No, Sorry I can't</a>
+              </div>
 
             </div>
             <!-- col end -->
@@ -802,6 +774,32 @@
           });
       }
   });
+  function responseAttend(params)
+  {
+      var getid = getQueryVariable("mid");
+      if(getid!==false){
+          $.ajax({
+              type: "POST",
+              url: 'http://clientzone.morabi.id/nog/responsewave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
+              data : 'statuses='+$params,
+              success: function(result) {
+                  var disp = '<div class="wed_simple_block text-center"><h2 class="wed_form_text message_head">';
+                  if(result.message==='yes'){
+                      disp += 'Thank you! We can’t wait to meet you! See you there!';
+                  }else if(result.message==='no'){
+                      disp += 'We hope you can attend, thank you!';
+                  }else if(result.message==='maybe'){
+                      disp += 'Thank you, Hope we have your blessing';
+                  }else{
+                      disp += 'Sorry, it shame our server in trouble';
+                  }
+                  disp += '</h2></div>';
+                  $('.responseAttend').html(disp);
+              }
+  
+          });
+      }
+  }
   </script>
 
 </body>
