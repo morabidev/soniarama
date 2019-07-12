@@ -769,6 +769,18 @@
                   });
                   $('.nameofguest_morabi').html(result.data.guest_name);
                   // console.log(result.data.guest_name);
+                  var disp = '<div class="wed_fixed text-center wed_groom wed_small_arrow" ><h2>';
+                  if(result.data.guest_attending==='yes'){
+                      disp += 'Thank you! We can’t wait to meet you! See you there!';
+                  }else if(result.data.guest_attending==='maybe'){
+                      disp += 'We hope you can attend, thank you!';
+                  }else if(result.data.guest_attending==='no'){
+                      disp += 'Thank you, Hope we have your blessing';
+                  }else{
+                      disp += 'Sorry, it shame our server in trouble';
+                  }
+                  disp += '</h2></div>';
+                  $('.responseAttend').html(disp);
               }
   
           });
@@ -783,7 +795,7 @@
               url: 'http://clientzone.morabi.id/nog/responsewave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
               data : 'statuses='+params,
               success: function(result) {
-                  var disp = '<div class="wed_simple_block text-center"><p class="wed_form_text">';
+                  var disp = '<div class="wed_fixed text-center wed_groom wed_small_arrow" ><h2>';
                   if(result.message==='yes'){
                       disp += 'Thank you! We can’t wait to meet you! See you there!';
                   }else if(result.message==='maybe'){
@@ -793,7 +805,7 @@
                   }else{
                       disp += 'Sorry, it shame our server in trouble';
                   }
-                  disp += '</p></div>';
+                  disp += '</h2></div>';
                   $('.responseAttend').html(disp);
               }
   
