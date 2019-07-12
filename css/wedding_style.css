@@ -5816,3 +5816,8 @@ img.wed_fullwidth {
   margin-bottom: -3px;
   margin-right: -3px;
 }
+.wed_attend_message{
+	font-size: 36px!important;
+	color: #333333!important;
+	font-family: hensa, Arial;
+}

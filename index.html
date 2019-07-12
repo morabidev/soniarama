@@ -770,7 +770,7 @@
                   $('.nameofguest_morabi').html(result.data.guest_name);
                   // console.log(result.data.guest_name);
                   if(result.data.guest_attending!=='w'){
-                      var disp = '<div class="wed_fixed text-center wed_groom wed_small_arrow"  style="font-size:18px!important;color:#333!important;" ><h2>';
+                      var disp = '<div class="wed_small_arrow"  ><span class="wed_attend_message">';
                       if(result.data.guest_attending==='yes'){
                           disp += 'Thank you! We can’t wait to meet you! See you there!';
                       }else if(result.data.guest_attending==='maybe'){
@@ -797,7 +797,7 @@
               url: 'http://clientzone.morabi.id/nog/responsewave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
               data : 'statuses='+params,
               success: function(result) {
-                  var disp = '<div class="wed_fixed text-center wed_groom wed_small_arrow"  style="font-size:18px!important;color:#333!important;" ><h2>';
+                  var disp = '<div class=" wed_small_arrow" ><span class="wed_attend_message">';
                   if(result.message==='yes'){
                       disp += 'Thank you! We can’t wait to meet you! See you there!';
                   }else if(result.message==='maybe'){
