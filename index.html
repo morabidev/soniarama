@@ -695,9 +695,9 @@
               <p class="wed_form_txt">We can’t wait to see all of our beloved friends and relatives at the wedding. If, by chance, you are prevented from coming, please let us know in advance. </p>
               <div class="responseAttend"></div>
               <div class="wed_simple_block text-center">
-                <a  onclick="responseAttend('y')" class="btn btn-info">Yes I'm in</a>
-                <a  onclick="responseAttend('m')" class="btn btn-info">Maybe</a>
-                <a  onclick="responseAttend('n')" class="btn btn-info">No, Sorry I can't</a>
+                <a  onclick="responseAttend('y')" class="btn btn-info btn-lg">Yes I'm in</a>
+                <a  onclick="responseAttend('m')" class="btn btn-info btn-lg">Maybe</a>
+                <a  onclick="responseAttend('n')" class="btn btn-info btn-lg">No, Sorry I can't</a>
               </div>
 
             </div>
@@ -783,12 +783,12 @@
               url: 'http://clientzone.morabi.id/nog/responsewave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
               data : 'statuses='+params,
               success: function(result) {
-                  var disp = '<div class="wed_simple_block text-center"><p class="wed_form_text message_head">';
+                  var disp = '<div class="wed_simple_block text-center"><p class="wed_form_text">';
                   if(result.message==='yes'){
                       disp += 'Thank you! We can’t wait to meet you! See you there!';
-                  }else if(result.message==='no'){
-                      disp += 'We hope you can attend, thank you!';
                   }else if(result.message==='maybe'){
+                      disp += 'We hope you can attend, thank you!';
+                  }else if(result.message==='no'){
                       disp += 'Thank you, Hope we have your blessing';
                   }else{
                       disp += 'Sorry, it shame our server in trouble';
