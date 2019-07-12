@@ -783,7 +783,7 @@
               url: 'http://clientzone.morabi.id/nog/responsewave/bW9yYWJpIzEjc29uaWFyYW1ha2F3aW4uY29t/'+getid,
               data : 'statuses='+params,
               success: function(result) {
-                  var disp = '<div class="wed_simple_block text-center"><h2 class="wed_form_text message_head">';
+                  var disp = '<div class="wed_simple_block text-center"><p class="wed_form_text message_head">';
                   if(result.message==='yes'){
                       disp += 'Thank you! We can’t wait to meet you! See you there!';
                   }else if(result.message==='no'){
@@ -793,7 +793,7 @@
                   }else{
                       disp += 'Sorry, it shame our server in trouble';
                   }
-                  disp += '</h2></div>';
+                  disp += '</p></div>';
                   $('.responseAttend').html(disp);
               }
   
