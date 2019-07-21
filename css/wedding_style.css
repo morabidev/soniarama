@@ -348,6 +348,14 @@ h6 {
 
 }
 
+@font-face {
+  font-family: 'July';
+  src: url('../fonts/This-july.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 
 /*===============================================*/
 /* 02. Bootstrap                                 */
@@ -911,6 +919,7 @@ textarea.form-control {
 /*02.3.Buttons*/
 .btn.large, .btn-lg {
 	padding: 20px;
+    margin: 10px;
 	font-weight: bold;
 }
 .btn.medium, .btn-sm {
@@ -2842,10 +2851,12 @@ h2.wed_without_after {
 /*06.5 Countdown*/
 
 .countdown-row {
+     font-family: July, Arial;
 	text-align: center;
 	display: block;
 }
 .countdown-row:after {
+   font-family: July, Arial;
 	display: block;
 	content: '';
 	clear: both;
@@ -2858,6 +2869,7 @@ h2.wed_without_after {
   display: block;
   float: left;
   width: 25%;  
+ font-family: July, Arial;
 
 }
 
@@ -2871,6 +2883,7 @@ h2.wed_without_after {
 	left: 13px;
 	right: 13px;
 	z-index: 2;
+  font-family: July, Arial;
 }
 
 .wed_countdown .countdown-amount {
@@ -2880,6 +2893,7 @@ h2.wed_without_after {
   font-weight: 900;
   position: relative;
   z-index: 2;
+    font-family: July, Arial;
 }
 .wed_fixed_bcg .wed_countdown .countdown-amount {
 	color: rgba(0,0,0,.6);
@@ -2888,6 +2902,7 @@ h2.wed_without_after {
   font-weight: 900;
   position: relative;
   z-index: 2;
+     font-family: July, Arial;
 }
 .wed_countdown .countdown-period {
 	color: #fff;
@@ -2897,6 +2912,7 @@ h2.wed_without_after {
   font-weight: 400;
 	position: relative;
   z-index: 2;
+ font-family: July, Arial;
 }
 .wed_fixed_bcg .wed_countdown .countdown-period {
 	color: #000;
@@ -2906,6 +2922,7 @@ h2.wed_without_after {
   font-weight: 400;
 	position: relative;
   z-index: 2;
+     font-family: July, Arial;
 }
 
 /*Portfolio Polaroid*/
@@ -2918,6 +2935,7 @@ h2.wed_without_after {
   margin-bottom: 232px;
   margin-top: 100px;
   left: 26px;
+    
 }
 
 .wed_portfolio_poloroid .wed_portfolio_item_poloroid {
