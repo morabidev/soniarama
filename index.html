@@ -749,14 +749,14 @@
                     fadeDelay: 0.50
                   });
                   $('.nameofguest_morabi').html(result.data.guest_name);
-                  // console.log(result.data.guest_name);
+                  // console.log(result.data);
                   if(result.data.guest_attending!=='w'){
                       var disp = '<div class="wed_small_arrow"  ><span class="wed_attend_message">';
-                      if(result.data.guest_attending==='yes'){
+                      if(result.data.guest_attending==='y'){
                           disp += 'Yess! We can’t wait to meet you! See you there!';
-                      }else if(result.data.guest_attending==='maybe'){
+                      }else if(result.data.guest_attending==='m'){
                           disp += 'We hope you can attend, thank you!';
-                      }else if(result.data.guest_attending==='no'){
+                      }else if(result.data.guest_attending==='n'){
                           disp += 'Thank you, Hope we have your blessing';
                       }else{
                           disp += '';
@@ -769,7 +769,6 @@
           });
       }
   });
-  responseAttend(getQueryVariable("guest"));
   function responseAttend(params)
   {
       var getid = getQueryVariable("mid");
